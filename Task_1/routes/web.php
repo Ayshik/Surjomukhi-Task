@@ -7,6 +7,7 @@ use App\Http\Controllers\BooksController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\UpdateController;
+use App\Http\Controllers\PermissionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +38,12 @@ Route::post('/Update_Admin', [UpdateController::class, 'updateadmin'])->middlewa
 
 Route::get('/admin/delete/{id}',[UpdateController::class,'admin_delete'])->middleware('loggedinadmin')->name('admin_delete');
 Route::get('/permission',[InformationController::class,'permission'])->middleware('loggedinadmin')->name('permission');
+
+Route::get('/permission2',[PermissionController::class,'permission2'])->middleware('loggedinadmin')->name('permission2');
+
+Route::post('/Permissionupdate', [PermissionController::class, 'updatepermission'])->middleware('loggedinadmin')->name('updatepermission');
+
+Route::post('/addmenu', [PermissionController::class, 'addmenu'])->middleware('loggedinadmin')->name('addmenu');
+
+
+Route::post('/addsubmenu', [PermissionController::class, 'addsubmenu'])->middleware('loggedinadmin')->name('addsubmenu');

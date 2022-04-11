@@ -130,6 +130,15 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('permission2')}}" class="nav-link ">
+              <i class="nav-icon fas fa-tools"></i>
+              <p>
+               permission 2.0
+                
+              </p>
+            </a>
+          </li>
           <!-- <li class="nav-item">
             <a href="laptop.php" class="nav-link ">
               <i class="nav-icon fas fa-laptop"></i>

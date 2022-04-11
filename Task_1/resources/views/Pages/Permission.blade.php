@@ -17,17 +17,15 @@
     </div>
 
     <a href="" class="white-text mx-3">Permission Table</a>
-
+    <form action="{{route('updatepermission')}}" method="post">
+{{csrf_field()}}
     <div>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-pencil-alt mt-0"></i>
+      <button style='font-size:24px' type="submit" class="btn btn-outline-white btn-rounded btn-sm px-2">
+        Save
+        <i class="fas fa-check-double mt-0" style='font-size:30px;color:red'></i>
+
       </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="far fa-trash-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-info-circle mt-0"></i>
-      </button>
+     
     </div>
 
   </div>
@@ -41,38 +39,40 @@
 
         <!--Table head-->
         <thead>
+       
           <tr>
-            <th>
-              <input class="form-check-input" type="checkbox" id="checkbox">
-              <label class="form-check-label" for="checkbox" class="mr-2 label-table"></label>
+          <th class="th-lg">
+              <a>Sl.
+               
+              </a>
             </th>
             <th class="th-lg">
-              <a>First Name
+              <a>Role
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Last Name
+              <a href="">Access Panel
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Username
+              <a href="">Create
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Username
+              <a href="">Edit
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Username
+              <a href="">View
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
             <th class="th-lg">
-              <a href="">Username
+              <a href="">Delete
                 <i class="fas fa-sort ml-1"></i>
               </a>
             </th>
@@ -81,137 +81,87 @@
         <!--Table head-->
 
         <!--Table body-->
+        
         <tbody>
+      
           <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox1">
-              <label class="form-check-label" for="checkbox1" class="label-table"></label>
-            </th>
-            <td>Mark</td>
-            <td><input type="checkbox" checked data-toggle="toggle"></td>
-            <td><input type="checkbox" checked data-toggle="toggle" data-size="xs"></td>
-            <td><input type="checkbox" checked data-toggle="toggle" data-size="xs"></td>
-            <td><input type="checkbox" checked data-toggle="toggle" data-size="xs"></td>
-            <td><input type="checkbox" checked data-toggle="toggle" data-size="xs"></td>
+           
+            
+            <td>{{$admin->id}}</td>
+            <td>Admin</td>
+            <input type="hidden" value="unchecked" name="adminaccess" data-toggle="toggle"  >
+            <td><input type="checkbox" value="Checked" name="adminaccess" {{$admin->Access}} data-toggle="toggle"  ></td>
+            <input type="hidden" value="unchecked" name="admincreate" data-toggle="toggle"  >
+            <td><input type="checkbox" value="Checked" name="admincreate" {{$admin->Creates}} data-toggle="toggle"></td>
+            <input type="hidden" value="unchecked" name="adminedit" data-toggle="toggle"  >
+            <td><input type="checkbox" value="Checked" name="adminedit" {{$admin->Edit}} data-toggle="toggle"></td>
+            <input type="hidden" value="unchecked" name="adminview" data-toggle="toggle"  >
+            <td><input type="checkbox" value="Checked" name="adminview" {{$admin->View}} data-toggle="toggle"></td>
+            <input type="hidden" value="unchecked" name="admindeletes" data-toggle="toggle"  >
+            <td><input type="checkbox" value="Checked" name="admindeletes" {{$admin->Deletes}} data-toggle="toggle"></td>
+            
+           
            
           </tr>
+
+
           <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox2">
-              <label class="form-check-label" for="checkbox2" class="label-table"></label>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox2">
-              <label class="form-check-label" for="checkbox2" class="label-table"></label>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox2">
-              <label class="form-check-label" for="checkbox2" class="label-table"></label>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox2">
-              <label class="form-check-label" for="checkbox2" class="label-table"></label>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox2">
-              <label class="form-check-label" for="checkbox2" class="label-table"></label>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox2">
-              <label class="form-check-label" for="checkbox2" class="label-table"></label>
-            </th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
+           
+            
+           <td>{{$superadmin->id}}</td>
+           <td>Super Admin</td>
+
+           <input type="hidden" value="unchecked" name="saaccess" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="saaccess" {{$superadmin->Access}} data-toggle="toggle"  ></td>
+           <input type="hidden" value="unchecked" name="sacreates" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="sacreates" {{$superadmin->Creates}} data-toggle="toggle"></td>
+           <input type="hidden" value="unchecked" name="saedit" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="saedit" {{$superadmin->Edit}} data-toggle="toggle"></td>
+           <input type="hidden" value="unchecked" name="saview" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="saview" {{$superadmin->View}} data-toggle="toggle"></td>
+           <input type="hidden" value="unchecked" name="sadelete" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="sadelete" {{$superadmin->Deletes}} data-toggle="toggle"></td>
           
+          
+         </tr>
+
+
+
+
+
           <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox3">
-              <label class="form-check-label" for="checkbox3" class="label-table"></label>
-            </th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox4">
-              <label class="form-check-label" for="checkbox4" class="label-table"></label>
-            </th>
-            <td>Paul</td>
-            <td>Topolski</td>
-            <td>@P_Topolski</td>
-            <td>Paul</td>
-            <td>Topolski</td>
-            <td>@P_Topolski</td>
-          </tr>
-          <tr>
-            <th scope="row">
-              <input class="form-check-input" type="checkbox" id="checkbox5">
-              <label class="form-check-label" for="checkbox5" class="label-table"></label>
-            </th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
+           
+            
+           <td>{{$user->id}}</td>
+           <td>User</td>
+           <input type="hidden" value="unchecked" name="uaccess" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="uaccess" {{$user->Access}} data-toggle="toggle"  ></td>
+           <input type="hidden" value="unchecked" name="ucreats" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="ucreats" {{$user->Creates}} data-toggle="toggle"></td>
+           <input type="hidden" value="unchecked" name="uedit" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="uedit" {{$user->Edit}} data-toggle="toggle"></td>
+           <input type="hidden" value="unchecked" name="uview" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="uview" {{$user->View}} data-toggle="toggle"></td>
+           <input type="hidden" value="unchecked" name="udeletes" data-toggle="toggle"  >
+           <td><input type="checkbox" value="Checked" name="udeletes" {{$user->Deletes}} data-toggle="toggle"></td>
+          
+          
+         </tr>
+
+        
+         
+         
+          
         </tbody>
+       
         <!--Table body-->
-      </table>
+      </table><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <!--Table-->
+     
     </div>
 
   </div>
-
+</form>
 </div>
 <!-- Table with panel -->
 
